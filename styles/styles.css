@@ -33,20 +33,25 @@ button {
     font-family: var(--main-font);
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
 header, header *, footer, footer * {
     background-color: var(--hdr-ftr-bg-color);
     color: var(--hdr-ftr-font-color);
 }
 
 header {
-    height: var(--header-height);
-
+    height: var(--header-height);   
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: fixed;
     width: 100vw;
-    
+    z-index: 999;
+    top: 0;
 }
 
 header > #menu-button {
@@ -109,10 +114,7 @@ button {
   }
 
 main {
-    height: calc(100vh - var(--header-height));
-    overflow: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
+    display: contents;
 }
 
 main > section {
@@ -123,11 +125,13 @@ main > section {
     flex-direction: column;
     justify-content: center;
     gap: 1em;
+    padding-top: calc(2em + var(--header-height));
 }
 
 main > section:last-of-type {
     /* on the last section remove also the footer's height from the section height to display footer on the bottom */
-    height: calc(100vh - var(--header-height) - 4em - var(--footer-height)); /* 2.66em => padding */
+    height: calc(100vh - var(--header-height) - 4em - var(--footer-height)); /* 4em => padding */
+    padding: 2em;
 }
 
 footer {
