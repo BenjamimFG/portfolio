@@ -1,0 +1,348 @@
+:root {
+    /* Colors */
+    --bg-color-light: #efefef;
+    --hdr-ftr-bg-color: #141318;
+    
+    --bg-font-color-light: #141318;
+    --hdr-ftr-font-color: #efefef;
+    --link-color: #e43420;
+
+    /* Sizes */
+    --header-height: 70px;
+    --footer-height: 70px;
+    --menu-item-height: 68px;
+
+    /* Fonts */
+    --main-font: 'Open Sans', sans-serif;
+
+    font-size: 14px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color-light);
+    min-height: 100vh;
+}
+
+button {
+    border: none;
+}
+
+* {
+    font-family: var(--main-font);
+}
+
+header, header *, footer, footer * {
+    background-color: var(--hdr-ftr-bg-color);
+    color: var(--hdr-ftr-font-color);
+}
+
+header {
+    height: var(--header-height);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+    
+}
+
+header > #menu-button {
+    position: absolute;
+    right: 1em;
+    padding: 0;
+    width: 2.8em;
+    height: 2.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > #menu-button > .feather {
+    width: 2.2em;
+    height: 2.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 1.9em;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 1.7em;
+}
+
+h6 {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+p {
+    font-size: 1.15em;
+    margin-top: 0;
+    text-align: justify;
+}
+
+a {
+    color: var(--link-color);
+}
+
+button {
+    cursor: pointer;
+}
+
+.feather {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+
+main {
+    height: calc(100vh - var(--header-height));
+    overflow: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+main > section {
+    height: calc(100vh - var(--header-height) - 4em); /* 4em => padding */
+    scroll-snap-align: start;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+}
+
+main > section:last-of-type {
+    /* on the last section remove also the footer's height from the section height to display footer on the bottom */
+    height: calc(100vh - var(--header-height) - 4em - var(--footer-height)); /* 2.66em => padding */
+}
+
+footer {
+    height: var(--footer-height);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+footer .feather {
+    width: 2.2em;
+    height: 2.2em;
+}
+
+#copyright {
+    position: absolute;
+    bottom: .2em;
+    font-size: .8em;
+}
+
+#menu {
+    position: absolute;
+    width: 100vw;
+    top: var(--header-height);
+    overflow: hidden;
+    height: auto;
+    max-height: 0;
+    transition: max-height .7s;
+    z-index: 999;
+}
+
+#menu.open {
+    max-height: calc(3 * var(--menu-item-height)); /* 3 menu items */
+}
+
+#menu > .menu-item {
+    background-color: var(--hdr-ftr-bg-color);
+    color: var(--hdr-ftr-font-color);
+    height: var(--menu-item-height);
+    display: flex;
+    align-items: center;
+    font-family: var(--main-font);
+    font-weight: bold;
+    font-size: 2em;
+    position: relative;
+    border-top: 1px solid var(--hdr-ftr-font-color);
+    text-decoration: none;
+}
+
+#menu > .menu-item > .icon-wrapper {
+    height: 2em;
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+#menu > .menu-item > span {
+    display: inline-block;
+    line-height: var(--menu-item-height);
+    height: var(--menu-item-height);
+    width: 100%;
+    text-align: center;
+}
+
+#projects-container {
+    width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+#projects .warning-wrapper {
+    max-height: calc(100% - 4em);
+}
+
+#slide-warning {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.8em;
+}
+
+#project-slider {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+}
+
+#project-slider.transition {
+    transition: transform 0.4s ease-in-out;
+}
+
+.project {
+    border: 2px solid var(--hdr-ftr-bg-color);
+    border-radius: 5px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: .7em;
+    min-width: calc(100% - 2em - 4px); /* 2em => padding; 4px => border */
+}
+
+.project h4 {
+    font-size: 1.1em;
+}
+
+.project img {
+    width: 100%;
+    margin-bottom: .4em;
+}
+
+.project .project-links {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.project .project-links .link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+}
+
+.project .project-links .feather {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.project .project-links a {
+    color: var(--link-color);
+}
+
+.project .description {
+    margin: 0;
+    text-align: justify;
+    flex: 1;
+}
+
+.project .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em .7em;
+}
+
+.project .tags .tag {
+    background-color: var(--hdr-ftr-bg-color);
+    color: var(--hdr-ftr-font-color);
+    padding: 0 .8em;
+    font-size: 0.85em;
+    border-radius: 10px;
+}
+
+#projects {
+    position: relative;
+}
+
+#projects button {
+    background-color: black;
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    position: absolute;
+    padding: 0;
+}
+
+#projects button .feather {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+#projects #prev-button {
+    top: 50%;
+    left: 0.3rem;
+    padding-right: 0.3em;
+}
+
+#projects #next-button {
+    top: 50%;
+    right: 0.3rem;
+    padding-left: 0.2em;
+}
+
+#contact h2 {
+    line-height: 0.9em;
+}
+
+#contact > form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#contact > form > textarea {
+    resize: none;
+    background-color: transparent;
+    border: 3px solid var(--hdr-ftr-bg-color);
+    border-radius: 5px;
+}
+
+#contact > form > button {
+    background-color: var(--hdr-ftr-bg-color);
+    color: var(--hdr-ftr-font-color);
+    height: 2.4em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 5px;
+    font-size: 1.2em;
+    gap: .5em;
+}

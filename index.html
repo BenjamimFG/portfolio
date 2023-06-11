@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/responsive.styles.css" />
+
+    <!-- Open Sans font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Benjamim Freitas</title>
+  </head>
+  <body>
+    <header>
+      <h1>Benjamim Freitas</h1>
+
+      <!-- Menu navigation links -->
+      <nav id="menu">
+        <a class="menu-item" href="#about-me" onclick="toggleMenu()">
+          <div class="icon-wrapper">
+            <svg class="feather">
+              <use href="assets/icons/feather-sprite.svg#user" />
+            </svg>
+          </div>
+          <span>Sobre Mim</span>
+        </a>
+        <a class="menu-item" href="#projects" onclick="toggleMenu()">
+          <div class="icon-wrapper">
+            <svg class="feather">
+              <use href="assets/icons/feather-sprite.svg#tool" />
+            </svg>
+          </div>
+          <span>Projetos</span>
+        </a>
+        <a class="menu-item" href="#contact" onclick="toggleMenu()">
+          <div class="icon-wrapper">
+            <svg class="feather">
+              <use href="assets/icons/feather-sprite.svg#mail" />
+            </svg>
+          </div>
+          <span>Contato</span>
+        </a>
+      </nav>
+
+      <button id="menu-button" onclick="toggleMenu()">
+        <svg class="feather">
+          <use href="assets/icons/feather-sprite.svg#menu" />
+        </svg>
+      </button>
+    </header>
+
+    <main>
+      <section id="about-me">
+        <h2>Sobre Mim</h2>
+        <div>
+          <p>
+            Olá, sou Benjamim Freitas. Sou um cientista da computação apaixonada por tecnologia que
+            ama explorar novas linguagens, ferramentas e frameworks. Por meio do meu trabalho, busco
+            criar soluções de software que resolvem problemas do mundo real e possuem um impacto
+            significativo nas vidas das pessoas.
+          </p>
+          <p>
+            Como um desenvolvedor anseio por aprender e me desafiar a encarar novos projetos e
+            tecnologias. Gosto de trabalhar em equipe, colaborando e criando soluções de software
+            que possuem um real impacto. Estou ansioso para continuar crescendo como engenheiro de
+            software e para contribuir significativamente para a comunidade de desenvolvimento.
+          </p>
+          <p>
+            Obrigado por visitar meu portfólio e por levar o tempo para me conhecer. Caso possua
+            quaisquer questões ou queira colaborar em um projeto, não hesite em entrar em contato.
+          </p>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projetos</h2>
+        <div class="warning-wrapper">
+          <div id="slide-warning">
+            <span>&leftarrow; Deslize &rightarrow;</span>
+          </div>
+
+          <div id="projects-container">
+            <div id="project-slider">
+              <!-- Populated in JS -->
+            </div>
+          </div>
+        </div>
+        <button onclick="prevProject()" id="prev-button">
+          <svg class="feather">
+            <use href="assets/icons/feather-sprite.svg#chevron-left" />
+          </svg>
+        </button>
+        <button onclick="nextProject()" id="next-button">
+          <svg class="feather">
+            <use href="assets/icons/feather-sprite.svg#chevron-right" />
+          </svg>
+        </button>
+      </section>
+
+      <section id="contact">
+        <div>
+          <h2>Contato</h2>
+          <h6>Envie um email</h6>
+        </div>
+        <form method="GET" action="mailto:Ben.FreitasG@gmail.com" target="_blank">
+          <textarea name="body" rows="10" spellcheck="false"></textarea>
+          <button type="submit">
+            <svg class="feather">
+              <use href="assets/icons/feather-sprite.svg#mail" />
+            </svg>
+            <span>Enviar</span>
+          </button>
+        </form>
+      </section>
+
+      <footer>
+        <a href="https://github.com/BenjamimFG" target="_blank">
+          <svg class="feather">
+            <use href="assets/icons/feather-sprite.svg#github" />
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/benjamim-freitas-g" target="_blank">
+          <svg class="feather">
+            <use href="assets/icons/feather-sprite.svg#linkedin" />
+          </svg>
+        </a>
+        <a href="mailto:Ben.FreitasG@gmail.com" target="_blank">
+          <svg class="feather">
+            <use href="assets/icons/feather-sprite.svg#mail" />
+          </svg>
+        </a>
+        <span id="copyright">&copy;&nbsp;Benjamim Freitas</span>
+      </footer>
+    </main>
+  </body>
+
+  <script src="scripts/projects.pt.js"></script>
+  <script src="scripts/script.js"></script>
+</html>
