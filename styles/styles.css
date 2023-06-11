@@ -131,7 +131,7 @@ main > section {
 main > section:last-of-type {
     /* on the last section remove also the footer's height from the section height to display footer on the bottom */
     height: calc(100vh - var(--header-height) - 4em - var(--footer-height)); /* 4em => padding */
-    padding: 2em;
+    padding-top: 2em;
 }
 
 footer {
