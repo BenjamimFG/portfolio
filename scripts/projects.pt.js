@@ -18,7 +18,7 @@ const projects = [
     sourceCodeUrl: 'https://github.com/BenjamimFG/nlw-spacetime',
     liveDemoUrl: null,
     description:
-      'Esta aplicação foi desenvolvida durante o evento Next Level Week Spacetime, que foi um evento de tecnologia hospedado pela <a href="http://rocketseat.com.br/nlw">Rocketseat</a> para compartilhamento de conhecimentos e desenvolvimento de habilidades.<br />A aplicação trata de uma cápsula do tempo onde os usuários podem registrar suas memórias e compartilhá-las caso queiram.<br />A aplicação foi construída com ReactJS, React Native e NodeJS utilizando a linguagem typescript.',
+      'Aplicação desenvolvida durante o evento Next Level Week Spacetime, evento de tecnologia hospedado pela <a href="http://rocketseat.com.br/nlw">Rocketseat</a> para compartilhamento de conhecimento e desenvolvimento de habilidades.<br />A aplicação é uma cápsula do tempo onde os usuários podem registrar suas memórias e se quiserem.',
     tags: [
       'frontend',
       'backend',
