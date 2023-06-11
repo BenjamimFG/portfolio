@@ -15,7 +15,8 @@
 /* Small desktop screens */
 @media only screen and (min-width: 800px) {
     main > section {
-        padding: 2em 4em;
+        padding-left: 4em;
+        padding-right: 4em;
     }
 
     header {
@@ -137,7 +138,8 @@
 /* Medium desktop screens */
 @media only screen and (min-width: 1200px) {
     main > section {
-        padding: 2em 10em;
+        padding-left: 10em;
+        padding-right: 10em;
     }
 
     header {
@@ -157,7 +159,8 @@
 /* Large desktop screens */
 @media only screen and (min-width: 1400px) {
     main > section {
-        padding: 2em 2px;
+        padding-left: 2px;
+        padding-right: 2px;
         max-width: 1200px;
         margin: 0 auto;
     }
